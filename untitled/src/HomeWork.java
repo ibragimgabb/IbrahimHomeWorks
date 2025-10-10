@@ -14,7 +14,6 @@ public class HomeWork {
         // 4. Assign the Integer value to an int variable (unboxing)
         int anotherPrimitive = anotherWrapper;
 
-        // Print the results
         System.out.println("Primitive int value: " + primitiveInt);
         System.out.println("Wrapper Integer value (autoboxed): " + wrapperInt);
         System.out.println("Another Wrapper Integer value: " + anotherWrapper);
