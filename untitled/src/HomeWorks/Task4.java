@@ -3,77 +3,63 @@ package HomeWorks;
 public class Task4 {
 
 
-    private String title;
-    private String author;
-    private String isbn;
-    protected int totalCopies;
-    protected int availableCopies;
+    String title;
+    String author;
+    String isbn;
+    int totalCopies;
+    int availableCopies;
 
 
-    {
-        System.out.println("New book created!");
-    }
-
-
-    public Task4(String title, String author, String isbn) {
+    public Task4(String title, String author, String isbn, int totalCopies) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
-        this.totalCopies = 1;
-        this.availableCopies = 1;
+        this.totalCopies = totalCopies;
+        this.availableCopies = totalCopies;
     }
 
 
-    public void borrowTask4() {
+    public void borrowBook() {
         if (availableCopies > 0) {
             availableCopies--;
-            System.out.println("Task4 borrowed successfully.");
+            System.out.println("Kitab uğurla götürüldü!");
         } else {
-            System.out.println("Sorry, no copies available.");
+            System.out.println("Bağışlayın, kitab qalmayıb.");
         }
     }
 
-    public void returnTask4() {
+
+    public void returnBook() {
         if (availableCopies < totalCopies) {
             availableCopies++;
-            System.out.println("Task4 returned successfully.");
+            System.out.println("Kitab geri qaytarıldı!");
         } else {
-            System.out.println("All copies are already in the library.");
+            System.out.println("Bütün kitablar artıq mövcuddur!");
         }
     }
 
     public void printInfo() {
-        System.out.println("Title: " + title);
-        System.out.println("Author: " + author);
+        System.out.println("Kitabın adı: " + title);
+        System.out.println("Müəllif: " + author);
         System.out.println("ISBN: " + isbn);
-        System.out.println("Total Copies: " + totalCopies);
-        System.out.println("Available Copies: " + availableCopies);
+        System.out.println("Ümumi nüsxə sayı: " + totalCopies);
+        System.out.println("Mövcud nüsxə sayı: " + availableCopies);
+        System.out.println("---------------------------");
     }
-
-
-    public static void libraryRules() {
-        System.out.println("Max 3 books can be borrowed per person.");
-    }
-
-
-    public final void bookType() {
-        System.out.println("This is a regular book.");
-    }
-
 
     public static void main(String[] args) {
-        // Class-dan obyekt yaradılır
-        Task4 book = new Task4("Effective Java", "Joshua Bloch", "123456789");
 
-        // Məlumat çap edilir
-        book.printInfo();
+        Task4 book1 = new Task4("Java Programming", "Ibrahim", "02588520", 3);
+        Task4 book2 = new Task4("Clean Code", "Ismayil", "58202825", 2);
 
-        // Metodlar yoxlanılır
-        book.borrowTask4();
-        book.returnTask4();
 
-        // Static və final metodlar
-        Task4.libraryRules();
-        book.bookType();
+        book1.printInfo();
+        book2.printInfo();
+
+        book1.borrowBook(); // 1 kitab azaldı
+        book1.printInfo();  // Yenilənmiş məlumat göstərilir
+
+        book1.returnBook(); // Geri qaytarıldı
+        book1.printInfo();  // Yenilənmiş məlumat göstərilir
     }
 }
