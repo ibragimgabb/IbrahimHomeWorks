@@ -18,7 +18,6 @@ public class Task4 {
         this.availableCopies = totalCopies;
     }
 
-
     public void borrowBook() {
         if (availableCopies > 0) {
             availableCopies--;
