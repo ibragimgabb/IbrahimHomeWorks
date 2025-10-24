@@ -55,10 +55,10 @@ public class Task4 {
         book1.printInfo();
         book2.printInfo();
 
-        book1.borrowBook(); // 1 kitab azaldı
-        book1.printInfo();  // Yenilənmiş məlumat göstərilir
+        book1.borrowBook(); 
+        book1.printInfo(); 
 
-        book1.returnBook(); // Geri qaytarıldı
-        book1.printInfo();  // Yenilənmiş məlumat göstərilir
+        book1.returnBook();
+        book1.printInfo();
     }
 }
