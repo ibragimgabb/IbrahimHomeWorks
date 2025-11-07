@@ -44,10 +44,8 @@ public class CarRentalSystem {
         }
         System.out.println("✅ " + c.getName() + " returned " + car.getModel() + " after " + durationStr);
 
-        // Add to history
         history.computeIfAbsent(car, k -> new ArrayList<>()).add(new AbstractMap.SimpleEntry<>(rentTime, returnTime));
 
-        // Clean up
         customerToCar.remove(c);
         carToRentTime.remove(car);
         availableCars.add(car);
@@ -81,7 +79,6 @@ public class CarRentalSystem {
         }
     }
 
-    // Example main method as provided
     public static void main(String[] args) throws InterruptedException {
         CarRentalSystem system = new CarRentalSystem();
         Car c1 = new Car(1, "Toyota", "Camry", 2022);
